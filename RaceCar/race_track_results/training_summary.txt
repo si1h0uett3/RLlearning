@@ -1,0 +1,6 @@
+Training Summary
+==================================================
+Final success rate: 1.000
+Average episode length: 25.4
+Average episode reward: -24.37
+Number of states visited: 759
