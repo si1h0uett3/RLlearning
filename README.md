@@ -2,6 +2,8 @@
 
 A collection of fundamental reinforcement learning algorithms implemented from scratch in Python.
 
+In the code files, those with number (e.g., "2.1", "5.7") represent versions that include complete visualization. The others are basic implementations, providing only the core reinforcement learning functionality without full visualization support. However, if there are no numerically-suffixed code files in the directory, it means the provided code already includes complete visualization features.
+
 ## 📚 Contents
 
 - **Multi-Armed Bandits** - Exploration vs exploitation strategies
