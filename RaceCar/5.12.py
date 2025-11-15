@@ -8,7 +8,21 @@ from tqdm import tqdm
 import os
 import shutil
 
+"""
+ 【One-step  Algorithm - Current Implementation】
+ Core: Update Q-value using next state-action pair
+ Update formula: Q(s,a) ← Q(s,a) + α[r + γQ(s',a') - Q(s,a)]
 
+ 🎯 One-step Characteristics:
+ - Considers only immediate next step reward
+ - Fast updates, suitable for online learning
+ - Simple implementation, computationally efficient
+
+ 🔄 For n-step Bootstrapping Version:
+ - See implementation in N_step_bootstrapping
+ - n-step  accumulates n-step returns for better bias-variance tradeoff
+ - Particularly effective in windy environments requiring multi-step planning
+ """
 class RaceTrack:
     def __init__(self):
         # 赛道参数
@@ -157,7 +171,7 @@ class MonteCarloAgent:
             state_key = self.state_to_key(state)
             action_idx = self.actions.index(action)
 
-            # 每次访问MC
+            # 每次访问MC - 直接更新
             self.returns[state_key][action_idx] += G
             self.visits[state_key][action_idx] += 1
             self.Q[state_key][action_idx] = (
@@ -166,6 +180,24 @@ class MonteCarloAgent:
 
             # 更新策略
             self.policy[state_key] = self.actions[np.argmax(self.Q[state_key])]
+
+            # ==================== 改为首次访问MC ====================
+            # 在循环开始前添加：
+            # first_visit = {}
+            #
+            # 在这里添加检查：
+            # state_action_pair = (state_key, action_idx)
+            # if state_action_pair not in first_visit:
+            #     first_visit[state_action_pair] = True
+            #
+            #     # 将上面的更新代码移到这个if语句内：
+            #     self.returns[state_key][action_idx] += G
+            #     self.visits[state_key][action_idx] += 1
+            #     self.Q[state_key][action_idx] = (
+            #         self.returns[state_key][action_idx] / self.visits[state_key][action_idx]
+            #     )
+            #     self.policy[state_key] = self.actions[np.argmax(self.Q[state_key])]
+            # ======================================================
 
     def train(self, num_episodes=10000, eval_interval=100):
         """训练代理"""
