@@ -6,8 +6,8 @@ A collection of fundamental reinforcement learning algorithms implemented from s
 
 - **Multi-Armed Bandits** - Exploration vs exploitation strategies
 - **Finite Markov Decision Processes** - Basketball shooting robot
-- **Dynamic Programming** - Race car optimization problem  
-- **Monte Carlo Methods** - Gambler's problem simulation
+- **Dynamic Programming** - Gambler's problem simulation
+- **Monte Carlo Methods** - Race car optimization problem  
 - **Temporal Difference Learning** - Windy gridworld navigation
 - **n-step Bootstrapping** - Advanced value estimation
 
