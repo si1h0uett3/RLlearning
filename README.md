@@ -1,2 +1,20 @@
-# RLlearning
-Reinforce learning code repository
+# Reinforcement Learning Algorithms
+
+A collection of fundamental reinforcement learning algorithms implemented from scratch in Python.
+
+## 📚 Contents
+
+- **Multi-Armed Bandits** - Exploration vs exploitation strategies
+- **Finite Markov Decision Processes** - Basketball shooting robot
+- **Dynamic Programming** - Race car optimization problem  
+- **Monte Carlo Methods** - Gambler's problem simulation
+- **Temporal Difference Learning** - Windy gridworld navigation
+- **n-step Bootstrapping** - Advanced value estimation
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/si1h0uett3/RLlearning.git
+cd RLlearning
+pip install -r requirements.txt
+python example_script.py
