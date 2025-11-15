@@ -4,7 +4,21 @@ import seaborn as sns
 from matplotlib.patches import Rectangle, FancyArrow
 import random
 
-
+    """
+    【One-step Algorithm - Current Implementation】
+    Core: Update Q-value using next state-action pair
+    Update formula: Q(s,a) ← Q(s,a) + α[r + γQ(s',a') - Q(s,a)]
+    
+    🎯 One-step Characteristics:
+    - Considers only immediate next step reward
+    - Fast updates, suitable for online learning
+    - Simple implementation, computationally efficient
+    
+    🔄 For n-step Bootstrapping Version:
+    - See implementation in N_step_bootstrapping
+    - n-step accumulates n-step returns for better bias-variance tradeoff
+    - Particularly effective in windy environments requiring multi-step planning
+    """
 class WindyGridWorld:
     def __init__(self, n=7, wind_strength=None):
         self.n = n  # rows
