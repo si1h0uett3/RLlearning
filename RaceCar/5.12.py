@@ -180,7 +180,7 @@ class MonteCarloAgent:
 
             # 更新策略
             self.policy[state_key] = self.actions[np.argmax(self.Q[state_key])]
-                    # ==================== 改为首次访问MC ====================
+    # ==================== 改为首次访问MC ====================
         # 在循环开始前添加：
         # first_visit = {}
         #
@@ -197,24 +197,6 @@ class MonteCarloAgent:
         #     )
         #     self.policy[state_key] = self.actions[np.argmax(self.Q[state_key])]
         # ======================================================
-
-            # ==================== 改为首次访问MC ====================
-            # 在循环开始前添加：
-            # first_visit = {}
-            #
-            # 在这里添加检查：
-            # state_action_pair = (state_key, action_idx)
-            # if state_action_pair not in first_visit:
-            #     first_visit[state_action_pair] = True
-            #
-            #     # 将上面的更新代码移到这个if语句内：
-            #     self.returns[state_key][action_idx] += G
-            #     self.visits[state_key][action_idx] += 1
-            #     self.Q[state_key][action_idx] = (
-            #         self.returns[state_key][action_idx] / self.visits[state_key][action_idx]
-            #     )
-            #     self.policy[state_key] = self.actions[np.argmax(self.Q[state_key])]
-            # ======================================================
 
     def train(self, num_episodes=10000, eval_interval=100):
         """训练代理"""
