@@ -1,12 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
 import random
 from collections import defaultdict
-import time
-from tqdm import tqdm
-import os
-import shutil
+
 
 class RaceTrack:
     def __init__(self):
